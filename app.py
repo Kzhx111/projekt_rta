@@ -57,4 +57,4 @@ def get_prediction():
     return jsonify(features=features, predicted_class=predicted_class)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run()
