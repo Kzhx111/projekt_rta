@@ -21,5 +21,5 @@ WORKDIR /home/jovyan/notebooks
 
 EXPOSE 8080
 
-RUN jupyter notebook --no-browser --port=8080
+# RUN jupyter notebook --no-browser --port=8080
 # CMD ["python", "app.py"]
