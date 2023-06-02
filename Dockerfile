@@ -1,14 +1,14 @@
+FROM jupyter/pyspark-notebook
 
-FROM python:3.10-slim-bullseye
+USER root
 
-WORKDIR /app
+RUN apt-get update && \
+    apt-get install -y wget git netcat && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
 
-COPY app.py .
-COPY model.pkl .
-COPY requirements.txt .
+# Install Tensorflow and pymongo
+RUN pip install --no-cache tensorflow pymongo confluent_kafka
 
-RUN pip install -r requirements.txt
+USER ${NB_UID}
 
-EXPOSE 8080
-
-CMD ["python", "app.py"]
+WORKDIR /home/jovyan/notebooks
