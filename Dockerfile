@@ -13,9 +13,9 @@ USER ${NB_UID}
 
 WORKDIR /home/jovyan/notebooks
 
-COPY app.py .
-COPY model.pkl .
-COPY requirements.txt .
+COPY notebooks/app.py .
+COPY notebooks/model.pkl .
+COPY notebooks/requirements.txt .
 
 RUN pip install -r requirements.txt
 
