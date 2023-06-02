@@ -17,7 +17,7 @@ COPY notebooks/app.py .
 COPY notebooks/model.pkl .
 COPY notebooks/requirements.txt .
 
-#RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt
 
 EXPOSE 8080
 
