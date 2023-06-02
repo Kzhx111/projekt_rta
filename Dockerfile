@@ -12,3 +12,7 @@ RUN pip install --no-cache tensorflow pymongo confluent_kafka
 USER ${NB_UID}
 
 WORKDIR /home/jovyan/notebooks
+
+EXPOSE 8080
+
+CMD ["python", "app.py"]
