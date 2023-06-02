@@ -13,6 +13,12 @@ USER ${NB_UID}
 
 WORKDIR /home/jovyan/notebooks
 
+COPY app.py .
+COPY model.pkl .
+COPY requirements.txt .
+
+RUN pip install -r requirements.txt
+
 EXPOSE 8080
 
 CMD ["python", "app.py"]
