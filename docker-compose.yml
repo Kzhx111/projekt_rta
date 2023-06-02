@@ -35,7 +35,7 @@ services:
     volumes:
       - ./notebooks:/home/jovyan/notebooks
     ports:
-      - 8888:8888
+      - 8080:8080
       - 4040:4040
     container_name: jupyter
     depends_on:
