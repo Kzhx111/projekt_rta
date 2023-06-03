@@ -13,13 +13,13 @@ USER ${NB_UID}
 
 WORKDIR /home/jovyan/notebooks
 
-COPY notebooks/app.py .
-COPY notebooks/model.pkl .
-COPY notebooks/requirements.txt .
+#COPY notebooks/app.py .
+#COPY notebooks/model.pkl .
+#COPY notebooks/requirements.txt .
 
-RUN pip install -r requirements.txt
+#RUN pip install -r requirements.txt
 
-EXPOSE 8080
+EXPOSE 8888
 
 # RUN jupyter notebook --no-browser --port=8080
- CMD ["python", "app.py"]
+#CMD ["python", "app.py"]
