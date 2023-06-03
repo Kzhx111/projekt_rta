@@ -27,5 +27,5 @@ ADD notebooks /home/jovyan/notebooks/
 
 #ENTRYPOINT [ "/home/jovyan/notebooks/entrypoint.sh" ] 
 
-EXPOSE 8888 
+EXPOSE 8888 8889
 #8000 2222
