@@ -3,12 +3,16 @@ FROM jupyter/pyspark-notebook
 USER root
 
 # Start and enable SSH
+#COPY entrypoint.sh ./
+
 #RUN apt-get update \
 #    && apt-get install -y --no-install-recommends dialog \
 #    && apt-get install -y --no-install-recommends openssh-server \
 #    && echo "root:Docker!" | chpasswd \
 #    && chmod u+x ./entrypoint.sh
 #COPY sshd_config /etc/ssh/
+
+#ENTRYPOINT [ "./entrypoint.sh" ] 
 
 RUN apt-get update && \
     apt-get install -y wget git netcat && \
@@ -22,10 +26,6 @@ USER ${NB_UID}
 WORKDIR /home/jovyan/notebooks
 
 ADD notebooks /home/jovyan/notebooks/
-
-#COPY entrypoint.sh /home/jovyan/notebooks/
-
-#ENTRYPOINT [ "/home/jovyan/notebooks/entrypoint.sh" ] 
 
 EXPOSE 8888 8889
 #8000 2222
