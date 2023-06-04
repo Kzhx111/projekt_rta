@@ -18,7 +18,6 @@ RUN apt-get update && \
     apt-get install -y wget git netcat && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Install Tensorflow and pymongo
 RUN pip install --no-cache tensorflow pymongo confluent_kafka
 
 USER ${NB_UID}
@@ -28,6 +27,7 @@ WORKDIR /home/jovyan/notebooks
 ADD notebooks /home/jovyan/notebooks/
 
 EXPOSE 8888 8889
+# 2222 for SSH
 
+# Below doen't work
 CMD [ "broker kafka-topics --bootstrap-server broker:9092 --create --topic test" ]
-#8000 2222
