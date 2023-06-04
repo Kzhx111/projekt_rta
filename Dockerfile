@@ -29,5 +29,5 @@ ADD notebooks /home/jovyan/notebooks/
 
 EXPOSE 8888 8889
 
-CMD [ "docker exec broker kafka-topics --bootstrap-server broker:9092 --create --topic test" ]
+CMD [ "broker kafka-topics --bootstrap-server broker:9092 --create --topic test" ]
 #8000 2222
